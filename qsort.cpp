@@ -36,7 +36,7 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(list, list.size(), sizeof(Node*),q_compare_number);  
+        qsort(&list, list.size(), sizeof(Node*),q_compare_number);  
     }
     else
     {
