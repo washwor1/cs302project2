@@ -1,11 +1,11 @@
 // qsort.cpp
 
 #include "volsort.h"
-
+#include <string.h>
 #include <cstdlib>
 #include <vector>
 #include <iostream>
-
+using namespace std;
 
 int q_compare_number(const void *a, const void *b){
     Node* l = (Node*) a;
@@ -13,9 +13,9 @@ int q_compare_number(const void *a, const void *b){
     return (l->number - r->number);
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
-    Node* l = (Node*) a;
-    Node* r = (Node*) b;
-    return r->string.compare(l->string);
+    Node* l = (Node*)a;
+    Node* r = (Node*)b;
+    return strcmp(l->string.c_str(), r->string.c_str());
 }
 
 
