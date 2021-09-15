@@ -8,13 +8,13 @@
 
 
 int q_compare_number(const void *a, const void *b){
-    struct Node* l = (struct Node*) a;
-    struct Node* r = (struct Node*) b;
+    Node* l = (Node*) a;
+    Node* r = (Node*) b;
     return (l->number - r->number);
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
-    struct Node* l = (struct Node*) a;
-    struct Node* r = (struct Node*) b;
+    Node* l = (Node*) a;
+    Node* r = (Node*) b;
     return r->string.compare(l->string);
 }
 
@@ -26,11 +26,11 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(*list.begin(), l.size, sizeof(list.at(0)),q_compare_number);
+        qsort(*list.begin(), list.size(), sizeof(list.at(0)),q_compare_number);
     }
     else
     {
-        qsort(*list.begin(), l.size, sizeof(list.at(0)),q_compare_string);
+        qsort(*list.begin(), list.size(), sizeof(list.at(0)),q_compare_string);
     }
 
     // std::cout << '\n';
