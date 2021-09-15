@@ -36,11 +36,11 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(&list, list.size(), sizeof(Node*),q_compare_number);  
+        qsort(list.data(), list.size(), sizeof(int),q_compare_number);  
     }
     else
     {
-        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
+        qsort(list.data(), list.size(), sizeof(Node*),q_compare_string);
     }
 
     // std::cout << '\n';
