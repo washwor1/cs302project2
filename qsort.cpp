@@ -39,8 +39,6 @@ int q_compare_string(const void *a, const void *b){
     else if(Left == Right){
         return 0;
     }
-    
-
 }
 
 
