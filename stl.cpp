@@ -7,6 +7,14 @@
 #include <vector>
 using namespace std;
 
+
+bool node_number_compare(const Node *a, const Node *b) {
+  return a->number<b->number;
+} 	//implement in this file (volsort.h), used by quick, merge and stl
+bool node_string_compare(const Node *a, const Node *b){
+  return a->string<b->string;
+}		//implement in this file (volsort.h), used by quick, merge and stl
+
 void stl_sort(List &l, bool numeric) {
     vector<Node*> list;
     for (Node * curr = l.head; curr != NULL; curr = curr->next) {
