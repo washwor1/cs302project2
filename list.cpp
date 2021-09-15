@@ -18,3 +18,11 @@ List::~List() {
     }
     head = 0;
 }
+
+void List::push_front(const std::string &s){
+  Node* add = head;
+  head = new Node;
+  head -> next = add;
+  head ->string = s;
+  head ->number = stoi(s);
+}
