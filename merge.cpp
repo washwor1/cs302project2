@@ -24,6 +24,7 @@ void merge_sort(List &l, bool numeric) {
 //when the function finally reaches the bottom of its recursion, it will start merging from the bottom up. you are then left with the sorted list which is returned as the result of the merge of the highest level msort().
 Node *msort(Node *head, bool numeric) {
     Node *left,*right;
+    cout <<"?";
     if (head == nullptr || head->next == nullptr) {
         return head;
     }
@@ -53,6 +54,7 @@ void split(Node *head, Node *&left, Node *&right) {
 //function works by setting the first and lowest value as the head and then uses "curr" as an iterator to add the next highest node until both are nullptr
 //basically the same for number and string except string uses string::compare
 Node *merge(Node *left, Node *right, bool numeric) {
+    cout << "chekpoint";
     Node *head,*curr;
     if(numeric) {
         if (left->number>=right->number) {
@@ -63,6 +65,7 @@ Node *merge(Node *left, Node *right, bool numeric) {
             head = left;
             left = left->next;
         }
+        cout << "chekpoin2";
         curr = head;
         while(left!=nullptr && right!= nullptr) {
             if(right==nullptr||left->number<=right->number) {
@@ -75,6 +78,7 @@ Node *merge(Node *left, Node *right, bool numeric) {
             }
             curr=curr->next;
         }
+        cout << "chekpoint3";
     }
     else {
         if (left->string.compare(right->string)>0) {
