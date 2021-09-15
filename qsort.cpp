@@ -6,8 +6,16 @@
 #include <vector>
 #include <iostream>
 
-int q_compare(const void *a, const void *b){
-  return (*(int*)a - *(int*)b);
+int q_compare_number(const Node *a, const Node *b){
+  if(a->number<b->number) {
+      return -1;
+  }
+  else if (a->number==b->number) {
+      return 0;
+  }
+  else {
+      return 1;
+  }
 } // allows for qsort to work for numbers
 
 
