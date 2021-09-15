@@ -68,11 +68,11 @@ int main(int argc, char *argv[]) {
     parse_command_line_options(argc, argv, mode, numeric);
 
     while (std::getline(std::cin, line)) {
-      std::cout <<"?";
+
       data.push_front(line);
-      std::cout <<"?";
+
     }
-    std::cout <<"?";
+
     
     switch (mode) {
         case MODE_STL:
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
             qsort_sort(data, numeric);
             break;
         case MODE_MERGE:
-            std::cout <<"?";
+ 
             merge_sort(data, numeric);
             break;
         case MODE_QUICK:

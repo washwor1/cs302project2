@@ -55,8 +55,13 @@ void split(Node *head, Node *&left, Node *&right) {
 //function works by setting the first and lowest value as the head and then uses "curr" as an iterator to add the next highest node until both are nullptr
 //basically the same for number and string except string uses string::compare
 Node *merge(Node *left, Node *right, bool numeric) {
-    cout << "chekpoint";
     Node *head,*curr;
+    if (right == nullptr) {
+        return left;
+    }
+    else if (left == nullptr) {
+        return right;
+    }
     if(numeric) {
         if (left->number>=right->number) {
             head=right;
@@ -66,7 +71,6 @@ Node *merge(Node *left, Node *right, bool numeric) {
             head = left;
             left = left->next;
         }
-        cout << "chekpoin2";
         curr = head;
         while(left!=nullptr && right!= nullptr) {
             if(right==nullptr||left->number<=right->number) {
@@ -79,7 +83,6 @@ Node *merge(Node *left, Node *right, bool numeric) {
             }
             curr=curr->next;
         }
-        cout << "chekpoint3";
     }
     else {
         if (left->string.compare(right->string)>0) {
