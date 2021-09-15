@@ -24,19 +24,14 @@ void qsort_sort(List &l, bool numeric) {
     std::vector<Node*> list;
     for (Node * curr = l.head; curr != NULL; curr = curr->next) {
         list.push_back(curr);
-        if (numeric == true)
-        {
-            qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_number);
-        }
-        else
-        {
-            qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
-        }
-        for (int i = 0; i < list.size(); i++)
-        {
-            cout << list.at(i)->number << " ";
-        }
-        
+    }
+    if (numeric == true)
+    {
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_number);        
+    }
+    else
+    {
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
     }
 
     // std::cout << '\n';
