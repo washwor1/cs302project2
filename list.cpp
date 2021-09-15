@@ -7,5 +7,5 @@ List::List() {
 }
 
 List::~List() {
-    
+    delete []head;
 }
