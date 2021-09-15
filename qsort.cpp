@@ -8,13 +8,13 @@
 using namespace std;
 
 int q_compare_number(const void *a, const void *b){
-    Node* l = (Node*) a;
-    Node* r = (Node*) b;
-    return (l->number - r->number);
+    Node *l = (Node *)a;
+    Node *r = (Node *)b;
+    return ((r->number) - (l->number));
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
-    Node* l = (Node*)a;
-    Node* r = (Node*)b;
+    Node *l = (Node *)a;
+    Node *r = (Node *)b;
     return strcmp(l->string.c_str(), r->string.c_str());
 }
 
