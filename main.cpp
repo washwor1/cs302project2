@@ -82,7 +82,6 @@ int main(int argc, char *argv[]) {
             qsort_sort(data, numeric);
             break;
         case MODE_MERGE:
- 
             merge_sort(data, numeric);
             break;
         case MODE_QUICK:
