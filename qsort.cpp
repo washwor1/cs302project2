@@ -25,12 +25,9 @@ int q_compare_number(const void *a, const void *b){
 int q_compare_string(const void *a, const void *b){
     Node *l = (Node *)a;
     Node *r = (Node *)b;
-    int Left;
-    int Right;
-    Left = stoi(l->string);
-    Right = stoi(r->string);
-    if (Left < Right)
-    {
+    int Left = stoi(l->string);
+    int Right = stoi(r->string);
+    if (Left < Right){
         return -1;
     }
     else if(Left > Right){
@@ -49,11 +46,11 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(list.data(), list.size(), sizeof(list.data()),q_compare_number);        
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_number);        
     }
     else
     {
-        qsort(list.data(), list.size(), sizeof(list.data()),q_compare_string);
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
     }
 
     // std::cout << '\n';
