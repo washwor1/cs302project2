@@ -16,6 +16,7 @@ Node *merge(Node *left, Node *right, bool numeric);
 
 //wrapper function. all it does is assign the final list to the head of the original list.
 void merge_sort(List &l, bool numeric) {
+    cout <<"?";
     l.head = msort(l.head, numeric);
 }
 
