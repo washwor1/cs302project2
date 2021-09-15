@@ -25,7 +25,6 @@ void merge_sort(List &l, bool numeric) {
 //when the function finally reaches the bottom of its recursion, it will start merging from the bottom up. you are then left with the sorted list which is returned as the result of the merge of the highest level msort().
 Node *msort(Node *head, bool numeric) {
     Node *left,*right;
-    cout <<"?";
     if (head == nullptr || head->next == nullptr) {
         return head;
     }
@@ -48,8 +47,8 @@ void split(Node *head, Node *&left, Node *&right) {
         }
     }
     left = head;
-    slow->next = nullptr;
     right = slow->next;
+    slow->next = nullptr;
 }
 
 //function works by setting the first and lowest value as the head and then uses "curr" as an iterator to add the next highest node until both are nullptr
