@@ -8,14 +8,14 @@
 
 
 int q_compare_number(const void *a, const void *b){
-  int l = ((struct Node *)a)->number;
-  int r = ((struct Node *)b)->number; 
-  return (l - r);
+    struct Node* l = (struct Node*) a;
+    struct Node* r = (struct Node*) b;
+    return (l->number - r->number);
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
-  std::string l = ((struct Node *)a)->string;
-  std::string r = ((struct Node *)b)->string;
-  return r.compare(l);
+    struct Node* l = (struct Node*) a;
+    struct Node* r = (struct Node*) b;
+    return r->string.compare(l->string);
 }
 
 
