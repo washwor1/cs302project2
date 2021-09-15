@@ -11,14 +11,14 @@ using namespace std;
 int q_compare_number(const void *a, const void *b){
     Node *l = (Node *)a;
     Node *r = (Node *)b;
-    if ((r->number) < (l->number))
+    if ((l->number) < (r->number))
     {
         return -1;
     }
-    else if((r->number) > (l->number)){
+    else if((l->number) > (r->number)){
         return 1;
     }
-    else if((r->number) == (l->number)){
+    else if((l->number) == (r->number)){
         return 0;
     }
 } // allows for qsort to work for numbers
