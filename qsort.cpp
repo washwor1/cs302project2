@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <vector>
 #include <iostream>
+
 using namespace std;
 
 int q_compare_number(const void *a, const void *b){
@@ -26,11 +27,11 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(list.data(), list.size(), sizeof(Node*),q_compare_number);
+        qsort(list.data(), list.size(), sizeof(list),q_compare_number);
     }
     else
     {
-        qsort(list.data(), list.size(), sizeof(Node*),q_compare_string);
+        qsort(list.data(), list.size(), sizeof(list),q_compare_string);
     }
 
     // std::cout << '\n';
