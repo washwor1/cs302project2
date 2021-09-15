@@ -28,7 +28,7 @@ int q_compare_string(const void *a, const void *b){
     int Left;
     int Right;
     Left = stoi(l->string);
-    Right = stoi(l->string);
+    Right = stoi(r->string);
     if (Left < Right)
     {
         return -1;
