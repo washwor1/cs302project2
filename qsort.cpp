@@ -13,10 +13,10 @@ int q_compare_number(const void *a, const void *b){
     Node *r = (Node *)b;
     if ((l->number) < (r->number))
     {
-        return 1;
+        return -1;
     }
     else if((l->number) > (r->number)){
-        return -1;
+        return 1;
     }
     else if((l->number) == (r->number)){
         return 0;
@@ -50,7 +50,7 @@ void qsort_sort(List &l, bool numeric) {
     }
     else
     {
-        qsort(list.data(), list.size(), sizeof(list),q_compare_string);
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
     }
 
     // std::cout << '\n';
