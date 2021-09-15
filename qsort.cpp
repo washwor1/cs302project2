@@ -5,17 +5,37 @@
 #include <cstdlib>
 #include <vector>
 #include <iostream>
+
 using namespace std;
 
 int q_compare_number(const void *a, const void *b){
     Node *l = (Node *)a;
     Node *r = (Node *)b;
-    return ((r->number) - (l->number));
+    if ((l->number) < (r->number))
+    {
+        return -1;
+    }
+    else if((l->number) > (r->number)){
+        return 1;
+    }
+    else if((l->number) == (r->number)){
+        return 0;
+    }
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
     Node *l = (Node *)a;
     Node *r = (Node *)b;
-    return strcmp(r->string.c_str(), l->string.c_str());
+    int Left = stoi(l->string);
+    int Right = stoi(r->string);
+    // if (Left < Right){
+    //     return -1;
+    // }
+    // else if(Left > Right){
+    //     return 1;
+    // }
+    // else if(Left == Right){
+    //     return 0;
+    // }
 }
 
 
@@ -26,7 +46,7 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_number);
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_number);        
     }
     else
     {
