@@ -33,18 +33,18 @@ void qsort_sort(List &l, bool numeric) {
         qsort(*list.begin(), list.size(), sizeof(Node*),q_compare_string);
     }
 
-    std::cout << '\n';
-    for (int i = 0; i<list.size();i++) {
-        std::cout<<list.at(i)->number<<'\n';
-    }
-    std::cout << '\n';
-
-    // list.push_back(nullptr);
-    // l.head = list.at(0);
-    // Node * curr = l.head;
-    // for (int i = 1; i<list.size();i++) {
-    //     curr->next = list.at(i);
-    //     curr = curr->next;
+    // std::cout << '\n';
+    // for (int i = 0; i<list.size();i++) {
+    //     std::cout<<list.at(i)->number<<'\n';
     // }
+    // std::cout << '\n';
+
+    list.push_back(nullptr);
+    l.head = list.at(0);
+    Node * curr = l.head;
+    for (int i = 1; i<list.size();i++) {
+        curr->next = list.at(i);
+        curr = curr->next;
+    }
 }
 
