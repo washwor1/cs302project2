@@ -16,5 +16,5 @@ List::~List() {
         delete current;
         current = next;
     }
-head = 0;
+    head = 0;
 }
