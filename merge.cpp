@@ -18,22 +18,28 @@ void merge_sort(List &l, bool numeric) {
     if (l.size == 0 || l.size == 1) {
         return;
     }
-    else if (l.size == 2) {
-        if (l.head->number>l.head->next->number) {
-            Node * curr = l.head;
-            l.head=l.head->next;
-            l.head->next=curr;
-            l.head->next->next=nullptr;
-        }
-        return;
-    }
-    
+    l.head = msort(l.head, numeric);
 }
 
 Node *msort(Node *head, bool numeric) {
+    Node *left,*right;
 }
 
 void split(Node *head, Node *&left, Node *&right) {
+    Node *fast,*slow;
+    slow = head;
+    fast = head->next;
+    //uses the slow and fast pointer trick as told in the lab writeup
+    while (fast != nullptr) {
+        fast = fast->next;
+        if (fast != nullptr) {
+            slow = slow->next;
+            fast = fast->next;
+        }
+    }
+    left = head;
+    slow->next = nullptr;
+    right = slow->next;
 }
 
 Node *merge(Node *left, Node *right, bool numeric) {
