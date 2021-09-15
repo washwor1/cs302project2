@@ -18,7 +18,7 @@ struct List {
     List(); 					// define in list.cpp
     ~List();					// define in list.cpp
 
-  //    void push_front(const std::string &s);	//define below
+    //  void push_front(const std::string &s);	//define below
 };
 
 
@@ -33,5 +33,9 @@ void stl_sort(List &l, bool numeric);	// define in stl.cpp - sort using std::sor
 void qsort_sort(List &l, bool numeric);	// define in qsort.cpp - sort using qsort from cstdlib
 void merge_sort(List &l, bool numeric);	// define in merge.cpp - your implementation
 void quick_sort(List &l, bool numeric);	// define in quick.cpp - your implementation
+
+void push_front(const std::string &s){
+  
+}
 
 #endif
