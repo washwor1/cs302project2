@@ -102,6 +102,10 @@ Node *merge(Node *left, Node *right, bool numeric) {
         }
     }
     curr->next=nullptr;
+    for (Node * curr2 = head; curr2 != NULL; curr2 = curr->next) {
+        cout << curr2->number << ' ';
+    }
+    cout << '\n';
     return head;
 }
 
