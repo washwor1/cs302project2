@@ -32,6 +32,12 @@ void qsort_sort(List &l, bool numeric) {
     {
         qsort(*list.begin(), list.size(), sizeof(Node*),q_compare_string);
     }
+
+    for (int i = 1; i<list.size();i++) {
+        std::cout<<list.at(i)->number;
+    }
+    std::cout << '\n';
+
     list.push_back(nullptr);
     l.head = list.at(0);
     Node * curr = l.head;
