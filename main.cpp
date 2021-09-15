@@ -60,6 +60,7 @@ void parse_command_line_options(int argc, char *argv[], int &mode, bool &numeric
 // Main execution --------------------------------------------------------------
 
 int main(int argc, char *argv[]) {
+    std::cout <<"?";
     int mode = MODE_STL;
     bool numeric = false;
     List data;
