@@ -31,6 +31,14 @@ bool node_string_compare(const Node *a, const Node *b){
   return a->string<b->string;
 }		//implement in this file (volsort.h), used by quick, merge and stl
 
+int q_number_compare(const void *a, const void *b){
+  return (*(int*)a - *(int*)b);
+}
+int q_string_compare(const void *a, const void *b){
+  return (*(int*)a - *(int*)b);
+}
+
+
 void dump_node(Node *n);					// implement in this file (volsort.h) to make it easier for TAs to grade
 
 void stl_sort(List &l, bool numeric);	// define in stl.cpp - sort using std::sort
