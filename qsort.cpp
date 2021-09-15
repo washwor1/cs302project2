@@ -32,6 +32,11 @@ void qsort_sort(List &l, bool numeric) {
         {
             qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
         }
+        for (int i = 0; i < list.size(); i++)
+        {
+            cout << list[i] << " ";
+        }
+        
     }
 
     // std::cout << '\n';
