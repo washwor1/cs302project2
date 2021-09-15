@@ -57,17 +57,21 @@ Node *merge(Node *left, Node *right, bool numeric) {
     if(numeric) {
         if (left->number>=right->number) {
             head=right;
+            right=right->next;
         }
         else {
             head = left;
+            left = left->next;
         }
         curr = head;
-        while(left->next!=nullptr && right->next!= nullptr) {
+        while(left!=nullptr && right!= nullptr) {
             if(right==nullptr||left->number<=right->number) {
                 curr->next=left;
+                right=right->next;
             }
             else{
                 curr->next=right;
+                right=right->next;
             }
             curr=curr->next;
         }
@@ -75,16 +79,20 @@ Node *merge(Node *left, Node *right, bool numeric) {
     else {
         if (left->string.compare(right->string)>0) {
             head=right;
+            right=right->next;
         }
         else {
             head = left;
+            left = left->next;
         }
-        while(left->next!=nullptr && right->next!= nullptr) {
+        while(left!=nullptr && right!= nullptr) {
             if(right==nullptr||left->string.compare(right->string)<0) {
                 curr->next=left;
+                left = left->next;
             }
             else{
                 curr->next=right;
+                right=right->next;
             }
             curr=curr->next;
         }
