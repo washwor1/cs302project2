@@ -25,4 +25,5 @@ void List::push_front(const std::string &s){
   head -> next = add;
   head ->string = s;
   head ->number = stoi(s);
+  size++;
 }

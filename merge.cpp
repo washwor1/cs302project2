@@ -3,6 +3,8 @@
 #include "volsort.h"
 
 #include <iostream>
+#include <vector>
+using namespace std;
 
 // Prototypes
 
@@ -12,15 +14,82 @@ Node *merge(Node *left, Node *right, bool numeric);
 
 // Implementations
 
+//wrapper function. all it does is assign the final list to the head of the original list.
 void merge_sort(List &l, bool numeric) {
+    l.head = msort(l.head, numeric);
 }
 
+//recursive function to drive the split and merge functions
+//works by first finding the base case of 1 or 0 items in the list. Then if it fails the base case, it continues to split the list into halves using split() and calls itself on both new lists created by the split.
+//when the function finally reaches the bottom of its recursion, it will start merging from the bottom up. you are then left with the sorted list which is returned as the result of the merge of the highest level msort().
 Node *msort(Node *head, bool numeric) {
+    Node *left,*right;
+    if (head == nullptr || head->next == nullptr) {
+        return head;
+    }
+    split(head,left,right);
+    msort(left,numeric);
+    msort(right,numeric);
+    return merge(left,right,numeric);
 }
 
+//function uses the slow and fast pointer trick as told in the lab writeup to determine the midpoint in the list. it then assigns the new bounds and adds a nullptr to end of the left list so it has bounds in later function calls.
 void split(Node *head, Node *&left, Node *&right) {
+    Node *fast,*slow;
+    slow = head;
+    fast = head->next;
+    while (fast != nullptr) {
+        fast = fast->next;
+        if (fast != nullptr) {
+            slow = slow->next;
+            fast = fast->next;
+        }
+    }
+    left = head;
+    slow->next = nullptr;
+    right = slow->next;
 }
 
+//function works by setting the first and lowest value as the head and then uses "curr" as an iterator to add the next highest node until both are nullptr
+//basically the same for number and string except string uses string::compare
 Node *merge(Node *left, Node *right, bool numeric) {
+    Node *head,*curr;
+    if(numeric) {
+        if (left->number>=right->number) {
+            head=right;
+        }
+        else {
+            head = left;
+        }
+        curr = head;
+        while(left->next!=nullptr && right->next!= nullptr) {
+            if(right==nullptr||left->number<=right->number) {
+                curr->next=left;
+            }
+            else{
+                curr->next=right;
+            }
+            curr=curr->next;
+        }
+    }
+    else {
+        if (left->string.compare(right->string)>0) {
+            head=right;
+        }
+        else {
+            head = left;
+        }
+        while(left->next!=nullptr && right->next!= nullptr) {
+            if(right==nullptr||left->string.compare(right->string)<0) {
+                curr->next=left;
+            }
+            else{
+                curr->next=right;
+            }
+            curr=curr->next;
+        }
+    }
+    curr->next=nullptr;
+    return head;
 }
 

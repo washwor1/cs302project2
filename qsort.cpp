@@ -1,21 +1,21 @@
 // qsort.cpp
 
 #include "volsort.h"
-
+#include <string.h>
 #include <cstdlib>
 #include <vector>
 #include <iostream>
-
+using namespace std;
 
 int q_compare_number(const void *a, const void *b){
-  int l = ((struct Node *)a)->number;
-  int r = ((struct Node *)b)->number; 
-  return (l - r);
+    Node *l = (Node *)a;
+    Node *r = (Node *)b;
+    return ((r->number) - (l->number));
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
-  std::string l = ((struct Node *)a)->string;
-  std::string r = ((struct Node *)b)->string;
-  return l.compare(r);
+    Node *l = (Node *)a;
+    Node *r = (Node *)b;
+    return strcmp(r->string.c_str(), l->string.c_str());
 }
 
 
@@ -26,16 +26,23 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(*list.begin(), list.size(), sizeof(Node*),q_compare_number);
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_number);
     }
     else
     {
-        qsort(*list.begin(), list.size(), sizeof(Node*),q_compare_string);
+        qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
     }
+
+    // std::cout << '\n';
+    // for (int i = 0; i<list.size();i++) {
+    //     std::cout<<list.at(i)->number<<'\n';
+    // }
+    // std::cout << '\n';
+
     list.push_back(nullptr);
     l.head = list.at(0);
     Node * curr = l.head;
-    for (int i = 1; i<list.size();i++) {
+    for (unsigned int i = 1; i<list.size();i++) {
         curr->next = list.at(i);
         curr = curr->next;
     }
