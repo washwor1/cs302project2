@@ -54,12 +54,6 @@ void split(Node *head, Node *&left, Node *&right) {
 //basically the same for number and string except string uses string::compare
 Node *merge(Node *left, Node *right, bool numeric) {
     Node *head,*curr;
-    if (right == nullptr) {
-        return left;
-    }
-    else if (left == nullptr) {
-        return right;
-    }
     if(numeric) {
         if (left->number>=right->number) {
             head=right;
@@ -71,7 +65,11 @@ Node *merge(Node *left, Node *right, bool numeric) {
         }
         curr = head;
         while(left!=nullptr && right!= nullptr) {
-            if(right==nullptr||left->number<=right->number) {
+            if (left == nullptr) {
+                curr->next=right;
+                right=right->next;
+            }
+            else if(right==nullptr||left->number<=right->number) {
                 curr->next=left;
                 right=right->next;
             }
@@ -104,6 +102,10 @@ Node *merge(Node *left, Node *right, bool numeric) {
         }
     }
     curr->next=nullptr;
+    for (Node * curr2 = head; curr2 != NULL; curr2 = curr->next) {
+        cout << curr2->number << ' ';
+    }
+    cout << '\n';
     return head;
 }
 
