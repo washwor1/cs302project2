@@ -60,7 +60,6 @@ void parse_command_line_options(int argc, char *argv[], int &mode, bool &numeric
 // Main execution --------------------------------------------------------------
 
 int main(int argc, char *argv[]) {
-    std::cout <<"?";
     int mode = MODE_STL;
     bool numeric = false;
     List data;
@@ -69,8 +68,11 @@ int main(int argc, char *argv[]) {
     parse_command_line_options(argc, argv, mode, numeric);
 
     while (std::getline(std::cin, line)) {
+      std::cout <<"?";
       data.push_front(line);
+      std::cout <<"?";
     }
+    std::cout <<"?";
     
     switch (mode) {
         case MODE_STL:
