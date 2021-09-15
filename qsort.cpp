@@ -36,11 +36,6 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        for (int i = 0; i < list.size(); i++)
-        {
-            cout << list.at(i)->number << " ";
-        }
-        cout << endl;
         qsort(list.data(), list.size(), sizeof(Node*),q_compare_number);  
     }
     else
