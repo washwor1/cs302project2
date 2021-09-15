@@ -53,6 +53,17 @@ void split(Node *head, Node *&left, Node *&right) {
 //function works by setting the first and lowest value as the head and then uses "curr" as an iterator to add the next highest node until both are nullptr
 //basically the same for number and string except string uses string::compare
 Node *merge(Node *left, Node *right, bool numeric) {
+    cout << "left: ";
+    for (Node * curr2 = left; curr2 != NULL; curr2 = curr2->next) {
+        cout << curr2->number << ' ';
+    }
+    cout << "\n\n";
+    cout << "right ";
+    for (Node * curr2 = right; curr2 != NULL; curr2 = curr2->next) {
+        cout << curr2->number << ' ';
+    }
+    cout << "\n\n";
+    
     Node *head,*curr;
     if(numeric) {
         if (left->number>=right->number) {
@@ -102,10 +113,7 @@ Node *merge(Node *left, Node *right, bool numeric) {
         }
     }
     curr->next=nullptr;
-    for (Node * curr2 = head; curr2 != NULL; curr2 = curr->next) {
-        cout << curr2->number << ' ';
-    }
-    cout << '\n';
+    
     return head;
 }
 
