@@ -79,6 +79,7 @@ int main(int argc, char *argv[]) {
             qsort_sort(data, numeric);
             break;
         case MODE_MERGE:
+            std::cout <<"?";
             merge_sort(data, numeric);
             break;
         case MODE_QUICK:
