@@ -25,13 +25,16 @@ void qsort_sort(List &l, bool numeric) {
     for (Node * curr = l.head; curr != NULL; curr = curr->next) {
         list.push_back(curr);
     }
-    if (numeric == true)
+    for (int i = 0; i < list.size(); i++)
     {
-        qsort(list.data(), list.size(), sizeof(list),q_compare_number);
-    }
-    else
-    {
-        qsort(list.data(), list.size(), sizeof(list),q_compare_string);
+        if (numeric == true)
+        {
+            qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_number);
+        }
+        else
+        {
+            qsort(list.data(), list.size(), sizeof(list.at(0)),q_compare_string);
+        }
     }
 
     // std::cout << '\n';
