@@ -70,6 +70,13 @@ int main(int argc, char *argv[]) {
     while (std::getline(std::cin, line)) {
 
       data.push_front(line);
+      Node * n = data.head;
+      for (int i = 0; i < data.size; i++)
+        {
+        std::cout << n->number << " ";
+        n = n->next;
+        }
+    std::cout << std::endl;
 
     }
 

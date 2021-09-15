@@ -1,7 +1,6 @@
 
 #include "volsort.h"
 
-
 List::List() {
     head = nullptr;
     size = 0;
