@@ -25,7 +25,7 @@ int q_compare_number(const void *a, const void *b){
 int q_compare_string(const void *a, const void *b){
     Node *l = (Node *)a;
     Node *r = (Node *)b;
-    return strcmp(r->string.c_str(), l->string.c_str());
+    return strcmp(l->string.c_str(), r->string.c_str());
 }
 
 
