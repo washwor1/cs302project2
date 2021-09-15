@@ -10,12 +10,12 @@
 int q_compare_number(const void *a, const void *b){
   int l = ((struct Node *)a)->number;
   int r = ((struct Node *)b)->number; 
-  return (l - r);
+  return (r - l);
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
   std::string l = ((struct Node *)a)->string;
   std::string r = ((struct Node *)b)->string;
-  return l.compare(r);
+  return r.compare(l);
 }
 
 
