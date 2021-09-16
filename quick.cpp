@@ -23,13 +23,13 @@ Node *qsort(Node *head, bool numeric) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    head->next=nullptr;
-    left = concatenate(left,head);
     std::cout << head->number << std::endl;
     left = qsort(left,numeric);
     std::cout << head->number << std::endl;
     right = qsort(right,numeric);
     std::cout << head->number << std::endl;
+    head->next=nullptr;
+    left = concatenate(left,head);
     return concatenate(left,right);
 }
 
