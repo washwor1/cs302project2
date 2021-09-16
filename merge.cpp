@@ -75,7 +75,7 @@ Node *merge(Node *left, Node *right, bool numeric) {
             left = left->next;
         }
         curr = head;
-        while(left!=nullptr && right!= nullptr) {
+        while(!(left==nullptr && right== nullptr)) {
             if (left == nullptr) {
                 curr->next=right;
                 right=right->next;
