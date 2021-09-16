@@ -51,8 +51,9 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
                 else{
                     currRight->next = curr;
                     currRight = right->next;
-                    if (curr->next==nullptr)
+                    if (curr->next==nullptr){
                         break;
+                    }
                     curr = curr->next;
                 }
             }
@@ -60,15 +61,17 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
                 if (left == nullptr) {
                     left = curr;
                     currLeft = left;
-                    if (curr->next==nullptr)
+                    if (curr->next==nullptr){
                         break;
+                    }
                     curr = curr->next;
                 }
                 else{
                     currLeft->next = curr;
                     currLeft = left->next;
-                    if (curr->next==nullptr)
+                    if (curr->next==nullptr){
                         break;
+                    }
                     curr = curr->next;
                 }
             }
