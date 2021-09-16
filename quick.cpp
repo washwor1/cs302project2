@@ -69,11 +69,6 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
         if(left != nullptr) {
             currLeft->next = nullptr;
         }
-        if(right != nullptr) {
-            std::cout << "re" << std::endl;
-            currRight->next = nullptr;
-            std::cout << "re" << std::endl;
-        }
         
     }
     
