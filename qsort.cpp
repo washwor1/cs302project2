@@ -37,6 +37,11 @@ void qsort_sort(List &l, bool numeric) {
     std::vector<Node*> list;
     for (Node * curr = l.head; curr != NULL; curr = curr->next) {
         list.push_back(curr);
+        std::cout << '\n';
+        for (int i = 0; i<list.size();i++) {
+       std::cout<<list.at(i)->number<<'\n';
+    }
+    std::cout << '\n';
     }
     if (numeric == true)
     {
