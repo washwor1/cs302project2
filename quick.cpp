@@ -69,6 +69,9 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
 }
 
 Node *concatenate(Node *left, Node *right) {
+    if (left == nullptr) {
+        return right;
+    }
     while(left->next!=nullptr) {
         left = left->next;
     }
