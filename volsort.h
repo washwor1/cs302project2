@@ -18,7 +18,7 @@ struct List {
     List(); 					// define in list.cpp
     ~List();					// define in list.cpp
 
-  //    void push_front(const std::string &s);	//define below
+  //  void push_front(const std::string &s);	//define below
 };
 
 
