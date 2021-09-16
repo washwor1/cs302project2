@@ -80,7 +80,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
         }
         
     }
-    
+    std::cout << currLeft << " " << currRight << std::endl;
 }
 
 Node *concatenate(Node *left, Node *right) {
