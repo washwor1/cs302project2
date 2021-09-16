@@ -23,9 +23,9 @@ Node *qsort(Node *head, bool numeric) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    for (Node * curr = right; curr != NULL; curr = curr->next) {
-        std::cout << right->number << std::endl;
-    }
+    // for (Node * curr = right; curr != NULL; curr = curr->next) {
+    //     std::cout << right->number << std::endl;
+    // }
     
     left = qsort(left,numeric);
     right = qsort(right,numeric);
@@ -84,7 +84,6 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
         }
         
     }
-    std::cout << currLeft << " " << currRight << std::endl;
 }
 
 Node *concatenate(Node *left, Node *right) {
