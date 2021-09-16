@@ -9,12 +9,8 @@
 using namespace std;
 
 int q_compare_number(const void *a, const void *b){
-    Node *l = (Node *)a;
-    Node *r = (Node *)b;
-    cout << "number: " << ((Node *)a)->number << endl;
-    cout << "number: " << ((Node *)b)->number << endl;
-    cout << l->number << " " << endl;
-    cout << r->number << " " << endl;
+    Node *l = *(Node **)a;
+    Node *r = *(Node **)b;
     if ((l->number) < (r->number))
     {
         return -1;
@@ -27,8 +23,8 @@ int q_compare_number(const void *a, const void *b){
     }
 } // allows for qsort to work for numbers
 int q_compare_string(const void *a, const void *b){
-    Node *l = (Node *)a;
-    Node *r = (Node *)b;
+    Node *l = *(Node **)a;
+    Node *r = *(Node **)b;
     return strcmp(l->string.c_str(), r->string.c_str());
 }
 
@@ -40,7 +36,7 @@ void qsort_sort(List &l, bool numeric) {
     }
     if (numeric == true)
     {
-        qsort(list.data(), list.size(), sizeof(int), q_compare_number);
+        qsort(list.data(), list.size(), sizeof(Node*), q_compare_number);
     }
     else{
         qsort(list.data(), list.size(), sizeof(Node*), q_compare_string);
