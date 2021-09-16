@@ -80,9 +80,9 @@ Node *merge(Node *left, Node *right, bool numeric) {
                 curr->next=right;
                 right=right->next;
             }
-            else if(right==nullptr||left->number<=right->number) {
+            else if(left->number<=right->number) {
                 curr->next=left;
-                right=right->next;
+                left=left->next;
             }
             else{
                 curr->next=right;
