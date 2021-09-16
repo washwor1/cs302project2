@@ -57,10 +57,10 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
                 }
             }
         }
-        if(left == nullptr) {
+        if(left != nullptr) {
             left->next = nullptr;
         }
-        if(right == nullptr) {
+        if(right != nullptr) {
             right->next = nullptr;
         }
         
