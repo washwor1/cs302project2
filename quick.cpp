@@ -23,7 +23,7 @@ Node *qsort(Node *head, bool numeric) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    for (Node * n = left; n != NULL; n = n->next) {
+    for (Node * curr = left; curr != NULL; curr = curr->next) {
         std::cout << left->number << std::endl;
     }
     
