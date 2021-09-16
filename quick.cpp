@@ -49,7 +49,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
                     curr = curr->next;
                 }
                 else{
-                    right->next = curr;
+                    currRight->next = curr;
                     currRight = right->next;
                     if (curr->next==nullptr)
                         break;
