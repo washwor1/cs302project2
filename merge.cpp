@@ -98,7 +98,7 @@ Node *merge(Node *left, Node *right, bool numeric) {
         }
     }
     else {
-        if (left->string.compare(right->string) <= 0) {
+        if (left->string.compare(right->string) >= 0) {
             head=right;
             right=right->next;
         }
@@ -112,7 +112,7 @@ Node *merge(Node *left, Node *right, bool numeric) {
                 curr->next=right;
                 right=right->next;
             }
-            else if(right== nullptr||left->string.compare(right->string) >= 0) {
+            else if(right== nullptr||left->string.compare(right->string) <= 0) {
                 curr->next=left;
                 left=left->next;
             }
