@@ -28,8 +28,8 @@ Node *msort(Node *head, bool numeric) {
         return head;
     }
     split(head,left,right);
-    msort(left,numeric);
-    msort(right,numeric);
+    left = msort(left,numeric);
+    right = msort(right,numeric);
     return merge(left,right,numeric);
 }
 
@@ -90,9 +90,15 @@ Node *merge(Node *left, Node *right, bool numeric) {
             }
             curr=curr->next;
         }
+        if (left!=nullptr) {
+            curr->next=left;
+        }
+        else if (right!=nullptr) {
+            curr->next=right;
+        }
     }
     else {
-        if (left->string.compare(right->string)>0) {
+        if (left->string.compare(right->string) <= 0) {
             head=right;
             right=right->next;
         }
@@ -100,16 +106,27 @@ Node *merge(Node *left, Node *right, bool numeric) {
             head = left;
             left = left->next;
         }
-        while(left!=nullptr && right!= nullptr) {
-            if(right==nullptr||left->string.compare(right->string)<0) {
+        curr = head;
+        while(!(left==nullptr && right== nullptr)) {
+            if (left == nullptr) {
+                curr->next=right;
+                right=right->next;
+            }
+            else if(right== nullptr||left->string.compare(right->string) >= 0) {
                 curr->next=left;
-                left = left->next;
+                left=left->next;
             }
             else{
                 curr->next=right;
                 right=right->next;
             }
             curr=curr->next;
+        }
+        if (left!=nullptr) {
+            curr->next=left;
+        }
+        else if (right!=nullptr) {
+            curr->next=right;
         }
     }
     curr->next=nullptr;
