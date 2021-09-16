@@ -23,10 +23,10 @@ Node *qsort(Node *head, bool numeric) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    left = qsort(left,numeric);
-    right = qsort(right,numeric);
     head->next=nullptr;
     left = concatenate(left,head);
+    left = qsort(left,numeric);
+    right = qsort(right,numeric);
     return concatenate(left,right);
 }
 
