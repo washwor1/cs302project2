@@ -28,8 +28,8 @@ Node *msort(Node *head, bool numeric) {
         return head;
     }
     split(head,left,right);
-    msort(left,numeric);
-    msort(right,numeric);
+    left = msort(left,numeric);
+    right = msort(right,numeric);
     return merge(left,right,numeric);
 }
 
