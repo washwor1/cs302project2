@@ -24,6 +24,7 @@ Node *qsort(Node *head, bool numeric) {
     }
     partition(head,head,left,right, numeric);
     head->next=nullptr;
+    std::cout << head->number << std::endl;
     left = concatenate(left,head);
     left = qsort(left,numeric);
     right = qsort(right,numeric);
@@ -36,7 +37,6 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
     int i = 0;
     if (numeric) {
         while(curr!=nullptr){
-            std::cout << pivot->number << std::endl;
             if(curr->number>=pivot->number) {
                 if (right == nullptr) {
                     right = curr;
