@@ -11,10 +11,6 @@ using namespace std;
 int q_compare_number(const void *a, const void *b){
     Node *l = *(Node **)a;
     Node *r = *(Node **)b;
-    cout << "number a: " << ((Node *)a)->number << endl;
-    cout << "number b: " << ((Node *)b)->number << endl;
-    cout << l->number << " " << endl;
-    cout << r->number << " " << endl;
     if ((l->number) < (r->number))
     {
         return -1;
