@@ -19,12 +19,12 @@ void quick_sort(List &l, bool numeric) {
 
 Node *qsort(Node *head, bool numeric) {
     Node *left,*right;
-    if (head == nullptr || head->next == nullptr) {
+    if ((head == nullptr) || head->next == nullptr) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    for (Node * curr = left; curr != NULL; curr = curr->next) {
-        std::cout << left->number << std::endl;
+    for (Node * curr = right; curr != NULL; curr = curr->next) {
+        std::cout << right->number << std::endl;
     }
     
     left = qsort(left,numeric);
