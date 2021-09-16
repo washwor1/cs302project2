@@ -90,6 +90,12 @@ Node *merge(Node *left, Node *right, bool numeric) {
             }
             curr=curr->next;
         }
+        if (left!=nullptr) {
+            curr->next=left;
+        }
+        else if (right!=nullptr) {
+            curr->next=right;
+        }
     }
     else {
         if (left->string.compare(right->string)>0) {

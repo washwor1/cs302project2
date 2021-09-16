@@ -13,6 +13,7 @@ Node *concatenate(Node *left, Node *right);
 // Implementations
 
 void quick_sort(List &l, bool numeric) {
+    l.head=qsort(l.head,numeric);
 }
 
 Node *qsort(Node *head, bool numeric) {
