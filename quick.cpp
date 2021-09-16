@@ -36,19 +36,20 @@ Node *qsort(Node *head, bool numeric) {
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric) {
     Node *curr = pivot->next;
     Node *currRight,*currLeft;
-    int i = 0;
     if (numeric) {
         while(curr!=nullptr){
             if(curr->number>=pivot->number) {
                 if (right == nullptr) {
                     right = curr;
-                    if (curr->next==nullptr)
+                    currRight = right;
+                    if (curr->next==nullptr){
                         break;
+                    }
                     curr = curr->next;
                 }
                 else{
-                    right->next = curr;
-                    right = right->next;
+                    currRight->next = curr;
+                    currRight = right->next;
                     if (curr->next==nullptr)
                         break;
                     curr = curr->next;
@@ -57,19 +58,19 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
             else if(curr->number<pivot->number) {
                 if (left == nullptr) {
                     left = curr;
+                    currLeft = left;
                     if (curr->next==nullptr)
                         break;
                     curr = curr->next;
                 }
                 else{
                     left->next = curr;
-                    left = left->next;
+                    currLeft = left->next;
                     if (curr->next==nullptr)
                         break;
                     curr = curr->next;
                 }
             }
-            i++;
         }
         if(left != nullptr) {
             currLeft->next = nullptr;
