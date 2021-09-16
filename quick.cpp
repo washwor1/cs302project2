@@ -80,6 +80,7 @@ Node *concatenate(Node *left, Node *right) {
     }
     while(left->next!=nullptr) {
         left = left->next;
+        std::cout << left << std::endl;
     }
     left->next=right;
     return left;
