@@ -31,10 +31,34 @@ Node *qsort(Node *head, bool numeric) {
 }
 
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric) {
+    Node *curr = pivot->next;
     if (numeric) {
-        for (Node * curr = pivot->next; curr != NULL; curr = curr->next) {
-            
+        while(curr!=nullptr){
+            if(curr->number>=pivot->number) {
+                if (right == nullptr) {
+                    right = curr;
+                    curr = curr->next;
+                }
+                else{
+                    right->next = curr;
+                    right = right->next;
+                    curr = curr->next;
+                }
+            }
+            else if(curr->number<pivot->number) {
+                if (left == nullptr) {
+                    left = curr;
+                    curr = curr->next;
+                }
+                else{
+                    left->next = curr;
+                    left = left->next;
+                    curr = curr->next;
+                }
+            }
         }
+        right->next = nullptr;
+        left->next = nullptr;
     }
     
 }
