@@ -30,7 +30,9 @@ Node *qsort(Node *head, bool numeric) {
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric) {
     if (numeric) {
         for (Node * curr = pivot->next; curr != NULL; curr = curr->next) {
-            if ()
+            if (1) {
+                
+            }
         }
     }
     
