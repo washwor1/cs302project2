@@ -25,8 +25,11 @@ Node *qsort(Node *head, bool numeric) {
     partition(head,head,left,right, numeric);
     head->next=nullptr;
     left = concatenate(left,head);
+    std::cout << head->number << endl;
     left = qsort(left,numeric);
+    std::cout << head->number << endl;
     right = qsort(right,numeric);
+    std::cout << head->number << endl;
     return concatenate(left,right);
 }
 
