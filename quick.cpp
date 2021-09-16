@@ -24,23 +24,27 @@ Node *qsort(Node *head, bool numeric) {
     partition(head,head,left,right, numeric);
     left = qsort(left,numeric);
     right = qsort(right,numeric);
+    head->next=nullptr;
+    left = concatenate(left,head);
     return concatenate(left,right);
 }
 
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric) {
     if (numeric) {
         for (Node * curr = pivot->next; curr != NULL; curr = curr->next) {
-            if (1) {
-                
-            }
+            
         }
     }
     
 }
 
 Node *concatenate(Node *left, Node *right) {
+    Node *curr;
+    curr = left;
     while(left->next!=nullptr) {
-
+        curr = left->next;
     }
+    left->next=right;
+    return left;
 }
 
