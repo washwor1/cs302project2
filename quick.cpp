@@ -67,6 +67,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
             }
         }
         if(left != nullptr) {
+            std::cout << left << std::endl;
             currLeft->next = nullptr;
         }
         
@@ -80,7 +81,6 @@ Node *concatenate(Node *left, Node *right) {
     }
     while(left->next!=nullptr) {
         left = left->next;
-        std::cout << left << std::endl;
     }
     left->next=right;
     return left;
