@@ -35,7 +35,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
     Node *currRight,*currLeft;
     if (numeric) {
         while(curr!=nullptr){
-            std::cout << curr->number << std::endl;
+            std::cout << pivot->number << std::endl;
             if(curr->number>=pivot->number) {
                 if (right == nullptr) {
                     right = curr;
