@@ -37,22 +37,30 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
             if(curr->number>=pivot->number) {
                 if (right == nullptr) {
                     right = curr;
+                    if (curr->next==nullptr)
+                        break;
                     curr = curr->next;
                 }
                 else{
                     right->next = curr;
                     right = right->next;
+                    if (curr->next==nullptr)
+                        break;
                     curr = curr->next;
                 }
             }
             else if(curr->number<pivot->number) {
                 if (left == nullptr) {
                     left = curr;
+                    if (curr->next==nullptr)
+                        break;
                     curr = curr->next;
                 }
                 else{
                     left->next = curr;
                     left = left->next;
+                    if (curr->next==nullptr)
+                        break;
                     curr = curr->next;
                 }
             }
