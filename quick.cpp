@@ -79,6 +79,52 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
             currRight->next = nullptr;
         } 
     }
+    else {
+        while(curr!=nullptr){
+            if(right->string.compare(pivot->string) >= 0) {
+                if (right == nullptr) {
+                    right = curr;
+                    currRight = right;
+                    if (curr->next==nullptr){
+                        break;
+                    }
+                    curr = curr->next;
+                }
+                else{
+                    currRight->next = curr;
+                    currRight = currRight->next;
+                    if (curr->next==nullptr){
+                        break;
+                    }
+                    curr = curr->next;
+                }
+            }
+            else {
+                if (left == nullptr) {
+                    left = curr;
+                    currLeft = left;
+                    if (curr->next==nullptr){
+                        break;
+                    }
+                    curr = curr->next;
+                }
+                else{
+                    currLeft->next = curr;
+                    currLeft = currLeft->next;
+                    if (curr->next==nullptr){
+                        break;
+                    }
+                    curr = curr->next;
+                }
+            }
+        }
+        if(left != nullptr) {
+            currLeft->next = nullptr;
+        }
+        if(right != nullptr){
+            currRight->next = nullptr;
+        } 
+    }
 }
 
 Node *concatenate(Node *left, Node *right) {
