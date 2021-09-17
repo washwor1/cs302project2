@@ -79,10 +79,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
         }
         if(right != nullptr){
             currRight->next = nullptr;
-        }
-        for (Node * loop = right; loop != NULL; loop = loop->next) {
-            std::cout << loop->number << std::endl;
-        }  
+        } 
     }
 }
 
