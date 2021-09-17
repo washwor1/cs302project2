@@ -66,13 +66,16 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
                 else{
                     currLeft->next = curr;
                     currLeft = currLeft->next;
-                    cout << currLeft->number << '\n';
                     if (curr->next==nullptr){
                         break;
                     }
                     curr = curr->next;
                 }
             }
+        }
+        if (pivot->number==22) {
+            cout<<left->number << ' ' << left->next->number;
+            
         }
         if(left != nullptr) {
             left->next = nullptr;
