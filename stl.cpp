@@ -1,4 +1,6 @@
 // stl.cpp
+//jay ashworth and andy zeng
+
 
 #include "volsort.h"
 
@@ -15,6 +17,8 @@ bool node_string_compare(const Node *a, const Node *b){
   return a->string<b->string;
 }		//implement in this file (volsort.h), used by quick, merge and stl
 
+//most basic sort function. it intakes the linked list into a vector by implementing a for loop similar to that in main and then passes that into stl::sort. 
+//I then returned the sorted vector to the linked list by applying the same ideas used in the first for loop but in a more traditional for loop. 
 void stl_sort(List &l, bool numeric) {
     vector<Node*> list;
     for (Node * curr = l.head; curr != NULL; curr = curr->next) {

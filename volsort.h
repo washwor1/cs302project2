@@ -1,4 +1,6 @@
 // volsort.h
+//jay ashworth and andy zeng
+//Using 4 different sorting algorithms and see what theroretical and actual difference is in each one
 
 #ifndef VOLSORT_H
 #define VOLSORT_H

@@ -1,4 +1,6 @@
 // quick.cpp
+//jay ashworth and andy zeng
+
 
 #include "volsort.h"
 
@@ -13,10 +15,13 @@ Node *concatenate(Node *left, Node *right);
 
 // Implementations
 
+//wrapper function for qsort. same function as wrapper for merge.
 void quick_sort(List &l, bool numeric) {
     l.head=qsort(l.head,numeric);
 }
 
+
+//similar driver function to merge with the exception of adding the pivot before merging the whole thing
 Node *qsort(Node *head, bool numeric) {
     Node *left=nullptr,*right=nullptr;
     if ((head == nullptr) || head->next == nullptr) {
@@ -30,6 +35,10 @@ Node *qsort(Node *head, bool numeric) {
     return concatenate(left,right);
 }
 
+
+//partition function. After checking for numeric, the function loops to iterate through the node string starting at head and calculates whether curr node is greater or lesser.
+//If it is lesser, the node is put into left and if it is greater, it is put into right. I also implemented section after the loop that makes the final pointer in each node string
+//equal to nullptr 
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric) {
     Node *curr = pivot->next;
     Node *currRight = nullptr,*currLeft =nullptr;
@@ -127,6 +136,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
     }
 }
 
+//iterates through left until it reaches a null. Then adds right as the next node in left and returns left as the head of the newly combined Node string.
 Node *concatenate(Node *left, Node *right) {
     Node *currLeft =nullptr;
     currLeft=left;
