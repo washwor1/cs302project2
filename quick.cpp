@@ -26,11 +26,13 @@ Node *qsort(Node *head, bool numeric) {
         return head;
     }
     partition(head,head,left,right, numeric);
+    cout << "\n\nright: ";
     for (Node * curr = right; curr != NULL; curr = curr->next) {
-        cout << "\n\n" << curr->number << ' ';
+        cout << curr->number << ' ';
     }
+    cout << "\n\nleft: ";
     for (Node * curr = left; curr != NULL; curr = curr->next) {
-        cout << "\n\n" << curr->number << ' ';
+        cout << curr->number << ' ';
     }
     
     left = qsort(left,numeric);
