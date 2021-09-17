@@ -23,7 +23,7 @@ Node *qsort(Node *head, bool numeric) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    if (head->number=22) {
+    if (head->number==22) {
         cout << left->number << ' ' << left->next->number;
     }
     left = qsort(left,numeric);
