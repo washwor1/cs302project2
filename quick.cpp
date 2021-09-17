@@ -23,9 +23,6 @@ Node *qsort(Node *head, bool numeric) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    if (head->number==22) {
-        cout << left->number << ' ' << left->next->number;
-    }
     left = qsort(left,numeric);
     right = qsort(right,numeric);
     head->next=nullptr;
@@ -76,7 +73,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
             }
         }
         if(left != nullptr) {
-            left->next = nullptr;
+            currLeft->next = nullptr;
         }
         if(right != nullptr){
             currRight->next = nullptr;
