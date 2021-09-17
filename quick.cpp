@@ -81,7 +81,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
     }
     else {
         while(curr!=nullptr){
-            if(right->string.compare(pivot->string) >= 0) {
+            if(curr->string.compare(pivot->string) >= 0) {
                 if (right == nullptr) {
                     right = curr;
                     currRight = right;
