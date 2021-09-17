@@ -19,21 +19,10 @@ void quick_sort(List &l, bool numeric) {
 
 Node *qsort(Node *head, bool numeric) {
     Node *left=nullptr,*right=nullptr;
-    if(head!=nullptr){
-        cout <<"\n\nhead: " <<head->number;
-    }
     if ((head == nullptr) || head->next == nullptr) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    cout << "\n\nright: ";
-    for (Node * curr = right; curr != NULL; curr = curr->next) {
-        cout << curr->number << ' ';
-    }
-    cout << "\n\nleft: ";
-    for (Node * curr = left; curr != NULL; curr = curr->next) {
-        cout << curr->number << ' ';
-    }
     
     left = qsort(left,numeric);
     right = qsort(right,numeric);
@@ -77,6 +66,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
                 else{
                     currLeft->next = curr;
                     currLeft = currLeft->next;
+                    cout << currLeft->number << '\n';
                     if (curr->next==nullptr){
                         break;
                     }
