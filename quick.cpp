@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <vector>
-
+using namespace std;
 // Prototypes
 
 Node *qsort(Node *head, bool numeric);
@@ -19,11 +19,19 @@ void quick_sort(List &l, bool numeric) {
 
 Node *qsort(Node *head, bool numeric) {
     Node *left=nullptr,*right=nullptr;
+    if(head!=nullptr){
+        cout <<"\n\nhead: " <<head->number;
+    }
     if ((head == nullptr) || head->next == nullptr) {
         return head;
     }
     partition(head,head,left,right, numeric);
-    
+    for (Node * curr = right; curr != NULL; curr = curr->next) {
+        cout << "\n\n" << curr->number << ' ';
+    }
+    for (Node * curr = left; curr != NULL; curr = curr->next) {
+        cout << "\n\n" << curr->number << ' ';
+    }
     
     left = qsort(left,numeric);
     right = qsort(right,numeric);
