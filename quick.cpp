@@ -84,13 +84,15 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, bool numeric)
 }
 
 Node *concatenate(Node *left, Node *right) {
+    Node *currLeft =nullptr;
+    currLeft=left;
     if (left == nullptr) {
         return right;
     }
-    while(left->next!=nullptr) {
-        left = left->next;
+    while(currLeft->next!=nullptr) {
+        currLeft = currLeft->next;
     }
-    left->next=right;
+    currLeft->next=right;
     return left;
 }
 
