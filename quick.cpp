@@ -18,7 +18,7 @@ void quick_sort(List &l, bool numeric) {
 }
 
 Node *qsort(Node *head, bool numeric) {
-    Node *left,*right;
+    Node *left=nullptr,*right=nullptr;
     if ((head == nullptr) || head->next == nullptr) {
         return head;
     }
